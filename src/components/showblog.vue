@@ -36,6 +36,12 @@ return blog.title.match(this.search);
   }
   );
 }
+  },
+  //register-locally
+  filters:{
+    toUppercase(value){
+      return value.toUpperCase();
+    }
   }
 }
 </script>
