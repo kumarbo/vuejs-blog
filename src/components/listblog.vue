@@ -1,11 +1,11 @@
 <template>
 <div  v-theme:cloumn="'narrow'" id="show-blog">
-    <h1>all blog article</h1>
+    <h1>list blog article</h1>
    <input type="text" v-model="search" placeholder="search blogs">
 
   <div v-for="blog in filteredBlogs " class="single-blog" v-bind:key="blog.id">
       <h2 v-rainbow>{{blog.title | to-uppercase}}</h2>
-      <article >{{blog.body | snippet}}</article>
+    
   </div>
 </div>
 </template>
@@ -29,16 +29,14 @@ export default {
           this.blogs=data.body.slice(0,10);
       })
   },
-  //custom search filter
-  
-  mixins:[searchmixin],
-
+ 
   //register-locally
   filters:{
     toUppercase(value){
       return value.toUpperCase();
     }
-  }
+  },
+  mixins: [searchmixin]
 }
 </script>
 
