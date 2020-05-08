@@ -6,6 +6,15 @@ Vue.use(VueResource);
 
 export const  bus=new Vue();
 
+//filters
+Vue.filter('to-uppercase',function(value){
+return value.toUpperCase();
+});
+
+Vue.filter('snippet',function(value){
+  return value.slice(0,100);
+  });
+
 //custom directive
 Vue.directive('rainbow',{
 bind(el,binding,vnode){
